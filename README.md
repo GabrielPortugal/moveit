@@ -9,6 +9,7 @@ Clone this project, install global and run
 ```
 npm i
 npm run dev
+```
 
 ### 😄 Created by
 Gabriel Portugal, 02/2021
