@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from 'react';
+import { createContext, ReactNode, useEffect, useState } from 'react';
 import challengesList from '../../challenges.json'
 
 interface Challenge {
@@ -16,6 +16,7 @@ interface ChallengesContextData {
   levelUp: () => void
   startNewChallenge: () => void
   resetChallenge: () => void
+  completeChallenge: () => void
 }
 
 interface ChallengesProviderProps {
@@ -34,6 +35,11 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
 
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2)
 
+  // array vazio executa quando dar um "mounted" na tela
+  useEffect(() => {
+    Notification.requestPermission()
+  }, [])
+
   function levelUp() {
     setLevel(level + 1)
   }
@@ -41,11 +47,39 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
   function startNewChallenge() {
     const rdn = Math.floor(Math.random() * challengesList.length)
     const challenge = challengesList[rdn]
+
     setActiveChallenge(challenge)
+
+    new Audio('./notification.mp3').play()
+
+    if (Notification.permission === 'granted') {
+      // https://developer.mozilla.org/pt-BR/docs/Web/API/notificacoes
+      new Notification('Novo desadio 🎉', {
+        body: `Valendo ${challenge.amount} xp!`
+      })
+    }
   }
 
   function resetChallenge() {
     setActiveChallenge(null)
+  }
+
+  function completeChallenge() {
+    if (!activeChallenge) {
+      return
+    }
+
+    const { amount } = activeChallenge
+    let finalXp = currentXp + amount
+
+    if (finalXp > experienceToNextLevel) {
+      finalXp = finalXp - experienceToNextLevel
+      levelUp()
+    }
+
+    setCurrentXp(finalXp)
+    setActiveChallenge(null)
+    setCompletedChallenges(completedChallenges + 1)
   }
 
   const obj = {
@@ -56,7 +90,8 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
     startNewChallenge,
     activeChallenge,
     resetChallenge,
-    experienceToNextLevel
+    experienceToNextLevel,
+    completeChallenge
   }
 
   return (
