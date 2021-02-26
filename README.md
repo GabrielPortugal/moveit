@@ -1,7 +1,7 @@
 # Move.it
 Combate ao sedentarismo!
 
-# Regra
+## Regra
 A cada 25 minutos o sistema emiti um alerta de um novo desafio. 
 O desafio tem como o objetivo fazer com que a pessoa se movimente. 
 Completando o desafio o usuário ganhará pontos de experiencia e assim subirá de nível.
@@ -27,5 +27,5 @@ gabrielpguadelupe@gmail.com
 
 [LinkTree](https://linktr.ee/gabrielportugal)
 
-# Imagens do sistema
+## Imagens do sistema
 ![Sistema em produção](https://github.com/GabrielPortugal/moveit/blob/master/mission_complete/img.png)
