@@ -1,4 +1,4 @@
-![Sistema em produção](https://github.com/GabrielPortugal/moveit/blob/master/mission_complete/img.png)
+![Sistema em produção](https://github.com/GabrielPortugal/moveit/blob/master/mission_complete/img_small.png)
 
 # Move.it
 Combate ao sedentarismo!
