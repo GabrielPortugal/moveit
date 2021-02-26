@@ -1,5 +1,3 @@
-![Sistema em produção](https://github.com/GabrielPortugal/moveit/blob/master/mission_complete/img_small.png)
-
 # Move.it
 Combate ao sedentarismo!
 
@@ -28,3 +26,6 @@ Gabriel Portugal, 02/2021
 gabrielpguadelupe@gmail.com
 
 [LinkTree](https://linktr.ee/gabrielportugal)
+
+# Imagens do sistema
+![Sistema em produção](https://github.com/GabrielPortugal/moveit/blob/master/mission_complete/img.png)
