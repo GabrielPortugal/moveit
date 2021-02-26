@@ -2,7 +2,7 @@
 Combate ao sedentarismo!
 
 ## Regra
-A cada 25 minutos o sistema emiti um alerta de um novo desafio. 
+A cada 25 minutos o sistema emite um alerta de um novo desafio. 
 O desafio tem como o objetivo fazer com que a pessoa se movimente. 
 Completando o desafio o usuário ganhará pontos de experiencia e assim subirá de nível.
  
